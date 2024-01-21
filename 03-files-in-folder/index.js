@@ -11,7 +11,7 @@ fs.readdir(folder, { withFileTypes: true }, (err, files) => {
       if (file.isFile()) {
         const ext = path.extname(file.name);
         const name = path.basename(file.name, ext);
-        fs.stat(file.path + '/' + file.name, (err, stats) => {
+        fs.stat(folder + '/' + file.name, (err, stats) => {
           if (err) throw err;
           else {
           console.log(name + ' - ' + ext.slice(1)  + ' - ' + stats.size + 'b');
